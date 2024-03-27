@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studying Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #efebf9;
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      width: 80%;
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #dbdce0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .header-container {
+      margin-bottom: 20px;
+      padding: 20px;
+      width: calc(80% * 1.15);
+      height: calc(87% * 1.15);
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #dbdce0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      color: #777c7f;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .question {
+      display: none;
+      margin-bottom: 20px;
+      color: #777c7f;
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #673bb8;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+      color: #673bb8;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .fade-in {
+      animation: slide-up 0.5s ease-in-out;
+    }
+
+    .fade-out {
+      animation: fade-out 0.5s ease-in-out;
+    }
+
+    @keyframes slide-up {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <h1 style="text-align: center; color: #777c7f; font-size: 66px;">Lockbox Challenge</h1>
+  </div>
+  <div class="container">
+    <div id="question1" class="question fade-in" style="display: block;">
+      <p>Question 1: What is the capital of Iceland?</p>
+      <input type="radio" name="q1" value="1"> a) Nitrogen<br>
+      <input type="radio" name="q1" value="2"> b) Oxygen<br>
+      <input type="radio" name="q1" value="3"> c) Carbon Dioxide<br>
+      <input type="radio" name="q1" value="4"> d) Hydrogen<br>
+      <button onclick="checkAnswer(1)">Next Question</button>
+    </div>
+    <div id="question2" class="question fade-out">
+      <p>Question 2: What is the capital of Ireland?</p>
+      <input type="radio" name="q2" value="1"> a) Absorbing UV rays<br>
+      <input type="radio" name="q2" value="2"> b) Conserving Heat<br>
+      <input type="radio" name="q2" value="3"> c) Provide gravity<br>
+      <input type="radio" name="q2" value="4"> d) Regulate orbital status<br>
+      <button onclick="checkAnswer(2)" disabled>Next Question</button>
+    </div>
+    <div id="question3" class="question fade-out">
+      <p>Question 3: What is the capital of England?</p>
+      <input type="radio" name="q3" value="1"> a) Carbon Monoxide<br>
+      <input type="radio" name="q3" value="2"> b) Vinyl chloride<br>
+      <input type="radio" name="q3" value="3"> c) Hydroxyl radical<br>
+      <input type="radio" name="q3" value="4"> d) Sulfur dioxide<br>
+      <button onclick="checkAnswer(3)" disabled>Next Question</button>
+    </div>
+    <div id="question4" class="question fade-out">
+      <p>Question 4: What is the capital of France?</p>
+      <input type="radio" name="q4" value="1"> a) North America<br>
+      <input type="radio" name="q4" value="2"> b) Europe<br>
+      <input type="radio" name="q4" value="3"> c) Antartica<br>
+      <input type="radio" name="q4" value="4"> d) Africa<br>
+      <button onclick="checkAnswer(4)" disabled>Submit</button>
+    </div>
+    <div id="question5" class="question fade-out">
+      <p>Question 5: What is the capital of Spain?</p>
+      <input type="radio" name="q5" value="1"> a) The place in the North Pole that pulls compass pins<br>
+      <input type="radio" name="q5" value="2"> b) The entire range of light<br>
+      <input type="radio" name="q5" value="3"> c) A charger for a device<br>
+      <input type="radio" name="q5" value="4"> d) Radiation<br>
+      <button onclick="checkAnswer(5)" disabled>Next Question</button>
+    </div>
+    <div id="question6" class="question fade-out">
+      <p>Question 6: What the capital of Portugal?</p>
+      <input type="radio" name="q6" value="1"> a) Ultraviolent<br>
+      <input type="radio" name="q6" value="2"> b) Usefulvolt<br>
+      <input type="radio" name="q6" value="3"> c) Uppervolt<br>
+      <input type="radio" name="q6" value="4"> d) Ultraviolet<br>
+      <button onclick="checkAnswer(6)" disabled>Next Question</button>
+    </div>
+    <div id="question7" class="question fade-out">
+      <p>Question 7: What is the capital of Luxembourg?</p>
+      <input type="radio" name="q7" value="1"> a) Blue<br>
+      <input type="radio" name="q7" value="2"> b) Yellow<br>
+      <input type="radio" name="q7" value="3"> c) Red<br>
+      <input type="radio" name="q7" value="4"> d) White<br>
+      <button onclick="checkAnswer(7)" disabled>Next Question</button>
+    </div>
+    <div id="question8" class="question fade-out">
+      <p>Question 8: What is the capital of Belguim?</p>
+      <input type="radio" name="q8" value="1"> a) Supernovas<br>
+      <input type="radio" name="q8" value="2"> b) Earth<br>
+      <input type="radio" name="q8" value="3"> c) Exotic neutron stars<br>
+      <input type="radio" name="q8" value="4"> d) Our Sun<br>
+      <button onclick="checkAnswer(8)" disabled>Submit</button>
+    </div>
+    <div id="question9" class="question fade-out">
+      <p>Question 9: What is the capital of Netherlands?</p>
+      <input type="radio" name="q9" value="1"> a) Our Sun<br>
+      <input type="radio" name="q9" value="2"> b) Exotic neutron stars<br>
+      <input type="radio" name="q9" value="3"> c) Earth<br>
+      <input type="radio" name="q9" value="4"> d) Supernovas<br>
+      <button onclick="checkAnswer(9)" disabled>Next Question</button>
+    </div>
+    <div id="question10" class="question fade-out">
+      <p>Question 10: What is the capital of Germany?</p>
+      <input type="radio" name="q10" value="1"> a) Good<br>
+      <input type="radio" name="q10" value="2"> b) Goldilocks planet<br>
+      <input type="radio" name="q10" value="3"> c) Life-sustaining planet<br>
+      <input type="radio" name="q10" value="4"> d) Planet<br>
+      <button onclick="checkAnswer(10)" disabled>Next Question</button>
+    </div>
+    <div id="question11" class="question fade-out">
+      <p>Question 11: What is the capital of Denmark?</p>
+      <input type="radio" name="q11" value="1"> a) Pattern<br>
+      <input type="radio" name="q11" value="2"> b) Wetness<br>
+      <input type="radio" name="q11" value="3"> c) Feedback<br>
+      <input type="radio" name="q11" value="4"> d) Matter<br>
+      <button onclick="checkAnswer(11)" disabled>Next Question</button>
+    </div>
+    <div id="question12" class="question fade-out">
+      <p>Question 12: What is the capital of Austria?</p>
+      <input type="radio" name="q12" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q12" value="2"> b) 1/190<br>
+      <input type="radio" name="q12" value="3"> c) 5/643<br>
+      <input type="radio" name="q12" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(12)" disabled>Submit</button>
+    </div>
+    <div id="question13" class="question fade-out">
+      <p>Question 13: What is the capital of Italy?</p>
+      <input type="radio" name="q13" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q13" value="2"> b) 1/190<br>
+      <input type="radio" name="q13" value="3"> c) 5/643<br>
+      <input type="radio" name="q13" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(13)" disabled>Submit</button>
+    </div>
+    <div id="question14" class="question fade-out">
+      <p>Question 14: What is the capital of Greece?</p>
+      <input type="radio" name="q14" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q14" value="2"> b) 1/190<br>
+      <input type="radio" name="q14" value="3"> c) 5/643<br>
+      <input type="radio" name="q14" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(14)" disabled>Submit</button>
+    </div>
+    <div id="question15" class="question fade-out">
+      <p>Question 15: What is the capital of Norway?</p>
+      <input type="radio" name="q15" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q15" value="2"> b) 1/190<br>
+      <input type="radio" name="q15" value="3"> c) 5/643<br>
+      <input type="radio" name="q15" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(15)" disabled>Submit</button>
+    </div>
+    <div id="question16" class="question fade-out">
+      <p>Question 16: What is the capital of Sweden?</p>
+      <input type="radio" name="q16" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q16" value="2"> b) 1/190<br>
+      <input type="radio" name="q16" value="3"> c) 5/643<br>
+      <input type="radio" name="q16" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(16)" disabled>Submit</button>
+    </div>
+    <div id="question17" class="question fade-out">
+      <p>Question 17: What is the capital of Finland?</p>
+      <input type="radio" name="q17" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q17" value="2"> b) 1/190<br>
+      <input type="radio" name="q17" value="3"> c) 5/643<br>
+      <input type="radio" name="q17" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(17)" disabled>Submit</button>
+    </div>
+    <div id="result"></div>
+  </div>
+  <script>
+    let score = 0;
+
+    function checkAnswer(questionNumber) {
+      const selectedAnswer = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+
+      if (!selectedAnswer) {
+        alert('Please select an answer.');
+        return;
+      }
+
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 3 : questionNumber === 4 ? 3 : questionNumber === 5 ? 2 : questionNumber === 6 ? 4 : questionNumber === 7 ? 1 : questionNumber === 8 ? 3 : questionNumber === 9 ? 4 : questionNumber === 10 ? 2 : questionNumber === 11 ? 3 : questionNumber === 12 ? 2 : questionNumber === 13 ? 3 : questionNumber === 14 ? 1 : questionNumber === 15 ? 1 : questionNumber === 16 ? 4 : questionNumber === 17 ? 2 : 1;
+      
+      if (selectedAnswer.value == correctAnswer) {
+        score++;
+      }
+
+      const currentQuestionDiv = document.getElementById(`question${questionNumber}`);
+      currentQuestionDiv.classList.remove('fade-in');
+      currentQuestionDiv.classList.add('fade-out');
+      currentQuestionDiv.addEventListener('animationend', function() {
+        currentQuestionDiv.style.display = 'none';
+        const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
+        if (nextQuestionDiv) {
+          nextQuestionDiv.style.display = 'block';
+          nextQuestionDiv.classList.remove('fade-out');
+          nextQuestionDiv.classList.add('fade-in');
+          const nextQuestionButton = nextQuestionDiv.querySelector('button');
+          nextQuestionButton.disabled = false;
+        } else {
+          const resultDiv = document.getElementById('result');
+          const percent = Math.round((score / 12) * 100);
+          let grade;
+
+          if (percent >= 90) {
+            grade = 'A';
+          } else if (percent >= 80) {
+            grade = 'B';
+          } else if (percent >= 70) {
+            grade = 'C';
+          } else if (percent >= 60) {
+            grade = 'D';
+          } else {
+            grade = 'F';
+          }
+
+          resultDiv.textContent = `Your score is ${score}/17 (${percent}%), Grade: ${grade}.`;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
